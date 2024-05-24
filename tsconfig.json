@@ -1,0 +1,50 @@
+{
+    "compilerOptions": {
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "allowJs": true,
+
+        // Skip type checking of all declaration files
+        "skipLibCheck": true,
+
+        // Disables namespace imports (import * as fs from "fs")
+        // And enables CJS/AMD/UMD style imports (import fs from "fs")
+        "esModuleInterop": true,
+
+        // Enable all strict type checking options
+        "strict": true,
+
+        "target": "ES5",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "sourceMap": true,
+
+        // Support JSX in .tsx files
+        "jsx": "react",
+
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": true,
+
+        // Include modules imported with .json extension
+        "resolveJsonModule": true,
+
+        // Do not emit output (meaning do not compile code, only perform type checking)
+        "noEmit": false,
+
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "alwaysStrict": true,
+        "strictFunctionTypes": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "plugins": [
+            {
+                "transformer": "typescript-plugin-styled-components",
+                "type": "config"
+            }
+        ]
+    },
+    "include": ["./src"],
+    "exclude": ["node_modules", "build", "dist"]
+}

@@ -1,0 +1,83 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["react", "@typescript-eslint", "prettier"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "env": {
+        "node": true,
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "rules": {
+        "prettier/prettier": "error",
+        "arrow-body-style": "off",
+        "prefer-arrow-callback": "off",
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/no-empty-interface": 0,
+        "@typescript-eslint/quotes": [
+            "error",
+            "single",
+            {
+                "allowTemplateLiterals": true
+            }
+        ],
+        "react/no-unescaped-entities": [
+            "error",
+            {
+                "forbid": [
+                    {
+                        "char": ">",
+                        "alternatives": ["&gt;"]
+                    },
+                    {
+                        "char": "}",
+                        "alternatives": ["&#125;"]
+                    }
+                ]
+            }
+        ],
+        // "indent": ["error", 4],
+        "semi": ["error", "always"],
+        "object-property-newline": "error",
+        "object-curly-newline": [
+            "error",
+            {
+                //configuration for object literals
+                "ObjectExpression": { "multiline": true, "minProperties": 1 }
+
+                // configuration for object patterns of destructuring assignments
+                // "ObjectPattern": { "multiline": true, "minProperties": 3 }
+
+                //configuration for named imports
+                // "ImportDeclaration": "multiline"
+            }
+        ],
+        "object-curly-spacing": ["error", "always"],
+        // "array-bracket-newline": [
+        //     "error",
+        //     {
+        //         "multiline": true,
+        //         "minItems": 3
+        //     }
+        // ],
+        // "array-element-newline": [
+        //     "error",
+        //     {
+        //         "multiline": true,
+        //         "minItems": 3
+        //     }
+        // ],
+        "no-console": [0, { "allow": ["warn", "error"] }]
+    }
+}
